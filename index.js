@@ -1,31 +1,66 @@
 /* Refer to https://github.com/OleksiyRudenko/a-tiny-JS-world for the task details
    Complete the below for code reviewers' convenience:
+*/
+const dog = {
+   species: "dog",
+   name: "Rasti",
+   gender: "male",
+   legs: 4,
+   hands: 0,
+   saying: "woof-woof!",
+   };
+   
+   const cat = {
+   species: "cat",
+   name: "Luna",
+   gender: "female",
+   legs: 4,
+   hands: 0,
+   saying: "mur",
+   };
+   
+   const woman = {
+   species: "woman",
+   name: "Lena",
+   gender: "female",
+   legs: 2,
+   hands: 2,
+   saying: "Hello",
+   friends: 'Alex, Lena',
+   };
+   
+   const man = {
+   species: "man",
+   name: "Alex",
+   gender: "male",
+   legs: 2,
+   hands: 2,
+   saying: "I want to sleep",
+   friends: 'Leo, Ivan',
+   };
+   
+   const catWoman = {
+   species: "catwoman",
+   name: "Selina",
+   gender: "female",
+   legs: 2,
+   hands: 2,
+   saying: cat.saying,
+   };
 
-   Code repository: _put repo URL here_
-   Web app: _put project's github pages URL here_
-   */
+   const objName = [dog, cat, woman, man, catWoman];
 
-// ======== OBJECTS DEFINITIONS ========
-// Define your objects here
-
-
-// ======== OUTPUT ========
-/* Use print(message) for output.
-   Default tag for message is <pre>. Use print(message,'div') to change containing element tag.
-
-   Message can contain HTML markup. You may also tweak index.html and/or styles.css.
-   However, please, REFRAIN from improving visuals at least until your code is reviewed
-   so code reviewers might focus on a single file that is index.js.
-   */
-
-/* Print examples:
-   print('ABC');
-   print('<strong>ABC</strong>');
-   print('<strong>ABC</strong>', 'div');
-
-   print('human; John; male; 2; 2; Hello world!; Rex, Tom, Jenny');
-   print('human; <strong>John</strong>; male; 2; 2; <em>Hello world!</em>; Rex, Tom, Jenny');
-   print('human; <strong>John</strong>; male; 2; 2; <em>Hello world!</em>; Rex, Tom, Jenny', 'div');
-   */
+   const objPrint = objName.map((obj) => {
+      let arr=[]
+      for (let key in obj) { 
+         arr.push(obj[key])
+      }
+      return arr
+   });
 
 
+   objPrint.forEach(item => {
+      print(item.join('; '))
+   })
+
+   
