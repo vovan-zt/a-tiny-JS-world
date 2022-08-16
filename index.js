@@ -1,6 +1,3 @@
-/* Refer to https://github.com/OleksiyRudenko/a-tiny-JS-world for the task details
-   Complete the below for code reviewers' convenience:
-*/
 // const dog = {
 //    species: "dog",
 //    name: "Rasti",
@@ -8,60 +5,54 @@
 //    legs: 4,
 //    hands: 0,
 //    saying: "woof-woof!",
-//    };
+// };
    
-//    const cat = {
+// const cat = {
 //    species: "cat",
 //    name: "Luna",
 //    gender: "female",
 //    legs: 4,
 //    hands: 0,
 //    saying: "mur",
-//    };
+// };
    
-//    const woman = {
-//    species: "woman",
+// const woman = {
+//    species: "human",
 //    name: "Lena",
+//    lastName: 'Jons',
+//    children: 2,
 //    gender: "female",
 //    legs: 2,
 //    hands: 2,
 //    saying: "Hello",
 //    friends: 'Alex, Lena',
-//    };
+// };
    
-//    const man = {
-//    species: "man",
+// const man = {
+//    species: "human",
 //    name: "Alex",
 //    gender: "male",
 //    legs: 2,
 //    hands: 2,
 //    saying: "I want to sleep",
-//    friends: 'Leo, Ivan',
-//    };
+// };
    
-//    const catWoman = {
+// const catWoman = {
 //    species: "catwoman",
 //    name: "Selina",
 //    gender: "female",
 //    legs: 2,
 //    hands: 2,
 //    saying: cat.saying,
-//    };
+// };
 
-//    const objName = [dog, cat, woman, man, catWoman];
+// const WorldInhabitant = [dog, cat, woman, man, catWoman];
 
-//    const objPrint = objName.map((obj) => {
-//       let arr=[]
-//       for (let key in obj) { 
-//          arr.push(obj[key])
-//       }
-//       return arr
-//    });
+// const  WorldInhabitantKeys =  ['species', 'name', 'gender', 'legs', 'hands', 'saying', 'friends'];
 
+// const WorldInhabitantPrint = WorldInhabitant.map(keys => WorldInhabitantKeys.map(meaning => print(keys[meaning]) ));
 
-//    objPrint.forEach(item => {
-//       print(item.join('; '))
-//    })
+  
 
 class WorldInhabitant {
    constructor(species, name, gender, saying) {
@@ -89,7 +80,6 @@ class Human extends WorldInhabitant {
       return super.getMeaning() + `${this.legs}; ${this.hands}; ${this.friends}`;
     }
 
-
 }
 
 class Animal extends WorldInhabitant { 
@@ -101,7 +91,6 @@ class Animal extends WorldInhabitant {
    getMeaning() {
       return super.getMeaning() + `${this.paws};`;
     }
-
 }
 
  const man = new Human('Alex', 'Joey', 'male', 'I want to sleep', 2, 2, 'Ivan, Stepan');
@@ -113,7 +102,5 @@ class Animal extends WorldInhabitant {
  const dog = new Animal('dog','Rasti','male','woof-woof');
 
  const catWoman = new Human('catwoman','Selina', 'female', cat.saying);
-
-
 
  [man, woman, cat, dog, catWoman].forEach(item => print(item.getMeaning()))
