@@ -25,7 +25,6 @@
 //    legs: 2,
 //    hands: 2,
 //    saying: "Hello",
-//    friends: 'Alex, Lena',
 // };
    
 // const man = {
@@ -48,14 +47,14 @@
 
 // const WorldInhabitant = [dog, cat, woman, man, catWoman];
 
-// const  WorldInhabitantKeys =  ['species', 'name', 'gender', 'legs', 'hands', 'saying', 'friends'];
+// const  WorldInhabitantKeys =  ['species', 'name', 'gender', 'legs', 'hands', 'saying'];
 
-// const WorldInhabitantPrint = WorldInhabitant.map(keys => WorldInhabitantKeys.map(meaning => keys[meaning]));
+// const WorldInhabitantPrint = WorldInhabitant.map(inhabitant => WorldInhabitantKeys.map(meaning => inhabitant[meaning]));
 
-// WorldInhabitantPrint.forEach(item => {
-//    print(item.join('; '))
+// WorldInhabitantPrint.forEach(inhabitant => {
+//    print(inhabitant.join('; '))
 // });
-  
+
 class WorldInhabitant {
    constructor(species, name, gender, saying) {
       this.species = species;
@@ -69,6 +68,7 @@ class WorldInhabitant {
       return this.prop.map(meaning => meaning);
    }    
 }
+
 class Human extends WorldInhabitant { 
    constructor(species, name, gender, saying, legs = 2, hands = 2, friends = '') {
       super(species, name, gender, saying);
@@ -77,6 +77,7 @@ class Human extends WorldInhabitant {
       this.prop = [species, name, gender, saying, legs, hands, friends];
    }
 }
+
 class Animal extends WorldInhabitant { 
    constructor(species, name, gender, saying, paws = 4) {
       super(species, name, gender, saying);
@@ -95,61 +96,4 @@ class Animal extends WorldInhabitant {
 
  const catWoman = new Human('catwoman','Selina', 'female', cat.saying);
 
-
- [man, woman, cat, dog, catWoman].forEach(item => print(item.getMeaning().join('; ')))
-
-
-
-// class WorldInhabitant {
-//    constructor(species, name, gender, saying) {
-//       this.species = species;
-//       this.name = name;
-//       this.gender = gender;
-//       this.saying = saying;
-//    }
-      
-//     getMeaning() {
-//       return `${this.species}; ${ this.name}; ${this.gender}; ${this.saying}; `
-//     }
-   
-// }
-
-
-// class Human extends WorldInhabitant { 
-//    constructor(species, name, gender, saying, legs = 2, hands = 2, friends = '') {
-//       super(species, name, gender, saying);
-//       this.legs = legs;
-//       this.hands = hands;
-//       this.friends = friends;
-//    }
-
-//    getMeaning() {
-//       return super.getMeaning() + `${this.legs}; ${this.hands}; ${this.friends}`;
-//    }
-
-// }
-
-// class Animal extends WorldInhabitant { 
-//    constructor(species, name, gender, saying, paws = 4 ) {
-//       super(species, name, gender, saying);
-//       this.paws = paws;
-//    }
-
-//    getMeaning() {
-//       return super.getMeaning() + `${this.paws};`;
-//     }
-// }
-
-
-//  const man = new Human('human', 'Joy', 'male', 'I want to sleep');
-
-//  const woman = new Human('human', 'Lena', 'female', 'Hello', 2, 2, man.name );
- 
-//  const cat = new Animal('cat', 'Luna', 'female','murrr');
-  
-//  const dog = new Animal('dog','Rasti','male','woof-woof');
-
-//  const catWoman = new Human('catwoman','Selina', 'female', cat.saying);
-
-
-//  [man, woman, cat, dog, catWoman].forEach(item => print(item.getMeaning()))
+ [man, woman, cat, dog, catWoman].forEach(inhabitant => print(inhabitant.getMeaning().join('; ')))
