@@ -38,20 +38,20 @@ class Cat extends Animal {
   }
 }
 class CatWoman extends Human {
-  constructor(name) {
-    super(name, 'woman', cat.saying);
+  constructor(name, saying) {
+    super(name, "woman", saying);
   }
 }
 
-const man = new Human("Jon", "male", "I want to sleep");
+const man = new Human("Jon", "male", "I want to sleep!");
 
-const woman = new Human("Lena", "female", "Hello", man.name);
+const woman = new Human("Lena", "female", "Hello!", man.name);
 
 const cat = new Cat("Luna", "female");
 
 const dog = new Dog("Rasti", "male");
 
-const catWoman = new CatWoman("Selina");
+const catWoman = new CatWoman("Selina", cat.saying);
 
 [man, woman, cat, dog, catWoman].forEach((inhabitant) =>
   print(inhabitant.getMeaning())
