@@ -30,6 +30,8 @@ class Human extends WorldInhabitant {
 			this.hands
 		} hands; ${this.friends ? this.friends.name : "no friends"}`;
 	}
+	
+
 }
 class Man extends Human {
 	constructor(name, saying, friends) {
@@ -55,7 +57,7 @@ class Animal extends WorldInhabitant {
 	}
 
 	getMeaning() {
-		return `${super.getMeaning()}; animal has ${this.paws} paws`;
+		return super.getMeaning() + `; animal has ${this.paws} paws`;
 	}
 }
 class Dog extends Animal {
