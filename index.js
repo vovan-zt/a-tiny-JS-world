@@ -58,8 +58,8 @@ class Animal extends WorldInhabitant {
 	getMeaning() {
 		return [
 			super.getMeaning(),
-			`<strong> animal has ${this.paws} paws <strong>`,
-		];
+			`<strong>animal has ${this.paws} paws<strong>`,
+		].join(" ");
 	}
 }
 class Dog extends Animal {
